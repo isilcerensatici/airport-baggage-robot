@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="airport_terminal">
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Dış duvarlar -->
+    <model name="wall_back">
+      <static>true</static>
+      <pose>0 5 0.5 0 0 0</pose>
+      <link name="link">
+        <visual name="visual"><geometry><box><size>12 0.2 1</size></box></geometry></visual>
+        <collision name="collision"><geometry><box><size>12 0.2 1</size></box></geometry></collision>
+      </link>
+    </model>
+
+    <model name="wall_front">
+      <static>true</static>
+      <pose>0 -5 0.5 0 0 0</pose>
+      <link name="link">
+        <visual name="visual"><geometry><box><size>12 0.2 1</size></box></geometry></visual>
+        <collision name="collision"><geometry><box><size>12 0.2 1</size></box></geometry></collision>
+      </link>
+    </model>
+
+    <model name="wall_left">
+      <static>true</static>
+      <pose>-6 0 0.5 0 0 0</pose>
+      <link name="link">
+        <visual name="visual"><geometry><box><size>0.2 10 1</size></box></geometry></visual>
+        <collision name="collision"><geometry><box><size>0.2 10 1</size></box></geometry></collision>
+      </link>
+    </model>
+
+    <model name="wall_right">
+      <static>true</static>
+      <pose>6 0 0.5 0 0 0</pose>
+      <link name="link">
+        <visual name="visual"><geometry><box><size>0.2 10 1</size></box></geometry></visual>
+        <collision name="collision"><geometry><box><size>0.2 10 1</size></box></geometry></collision>
+      </link>
+    </model>
+
+    <!-- İç koridor/labirent duvarları -->
+    <model name="corridor_1">
+      <static>true</static>
+      <pose>-2 2 0.5 0 0 0</pose>
+      <link name="link">
+        <visual name="visual"><geometry><box><size>0.2 4 1</size></box></geometry></visual>
+        <collision name="collision"><geometry><box><size>0.2 4 1</size></box></geometry></collision>
+      </link>
+    </model>
+
+    <model name="corridor_2">
+      <static>true</static>
+      <pose>2 -2 0.5 0 0 0</pose>
+      <link name="link">
+        <visual name="visual"><geometry><box><size>0.2 4 1</size></box></geometry></visual>
+        <collision name="collision"><geometry><box><size>0.2 4 1</size></box></geometry></collision>
+      </link>
+    </model>
+
+    <model name="baggage_area">
+      <static>true</static>
+      <pose>4 3 0.15 0 0 0</pose>
+      <link name="link">
+        <visual name="visual"><geometry><box><size>1.5 1 0.3</size></box></geometry></visual>
+        <collision name="collision"><geometry><box><size>1.5 1 0.3</size></box></geometry></collision>
+      </link>
+    </model>
+
+    <model name="check_in_desk">
+      <static>true</static>
+      <pose>-4 -3 0.25 0 0 0</pose>
+      <link name="link">
+        <visual name="visual"><geometry><box><size>2 0.5 0.5</size></box></geometry></visual>
+        <collision name="collision"><geometry><box><size>2 0.5 0.5</size></box></geometry></collision>
+      </link>
+    </model>
+
+  </world>
+</sdf>

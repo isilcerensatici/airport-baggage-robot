@@ -1,0 +1,14 @@
+<launch>
+
+<param name="robot_description"
+textfile="$(find airport_baggage_robot)/urdf/baggage_robot.urdf"/>
+
+<include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+<node
+name="spawn_urdf"
+pkg="gazebo_ros"
+type="spawn_model"
+args="-urdf -model baggage_robot -param robot_description"/>
+
+</launch>

@@ -1,0 +1,18 @@
+<launch>
+
+  <arg name="model" default="burger"/>
+
+  <param name="robot_description"
+         command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="/root/catkin_ws/src/airport_baggage_robot/worlds/airport_terminal.world"/>
+  </include>
+
+  <node name="spawn_turtlebot"
+        pkg="gazebo_ros"
+        type="spawn_model"
+        args="-urdf -model turtlebot3_burger -x 0 -y 0 -z 0.1 -param robot_description"
+        output="screen" />
+
+</launch>
